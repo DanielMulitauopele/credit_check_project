@@ -34,11 +34,11 @@ def index_multiplier_method(reverse_integer_array)
   end
 return multiplied_integer_array
 end
-# If the multiplied element is double digits, take those two digits and add them together, replacing the original digit
 
+# If the multiplied element is double digits, take those two digits and add them together, replacing the original digit
 def double_to_single_method(multiplied_integer_array)
-  multiplied_integer_array.each do |value|
   single_digit_array = []
+  multiplied_integer_array.each do |value|
     if value > 9
       value = value - 9
       single_digit_array << value
@@ -49,10 +49,25 @@ def double_to_single_method(multiplied_integer_array)
   end
   return single_digit_array
 end
+
 # Take the remaining elements and sum them
+def summing_method(single_digit_array)
+  summed_array = single_digit_array.sum
+end
+
 # If the sum % 10 == 0 puts "The number is valid!"
 # Else puts "The number is invalid!"
+def modulo_10_method(summed_array, card_number)
+  if summed_array % 10 == 0
+    "The number #{card_number} is valid!"
+  else
+    "The number #{card_number} is invalid!"
+  end
+end
 
+# def valid_number
+#   modulo_10_method(summed_array, card_number)
+# end
 
 # The variables should be listed below
 card_number = "4929735477250543"
@@ -62,9 +77,9 @@ card_integer_array = array_to_integer_array_method(card_array)
 reverse_integer_array = reverse_method(card_integer_array)
 multiplied_integer_array = index_multiplier_method(reverse_integer_array)
 single_digit_array = double_to_single_method(multiplied_integer_array)
-# summed_array = double_to_single_array.sum
-# valid_number? = modulo_10_method(summed_array)
+summed_array = summing_method(single_digit_array)
+valid_number = modulo_10_method(summed_array, card_number)
 
 # One method should encompass all of the others ("bake a cake method")
 
-print single_digit_array
+print valid_number
