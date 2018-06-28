@@ -1,8 +1,13 @@
 # Your Luhn Algorithm Here (use a method for each step)
 
+#Convert all to string
+def all_to_string_method(card_number)
+  @card_number_string = card_number.to_s
+end
+
 # Convert string into array
-def string_to_array_method(card_number)
-  card_number.chars
+def string_to_array_method(card_number_string)
+  @card_number_string.chars
 end
 
 # Convert array of strings into array of integers
@@ -70,8 +75,9 @@ end
 # end
 
 # The variables should be listed below
-card_number = "4929735477250543"
+card_number = 5541808923795240
 
+card_number_string = all_to_string_method(card_number)
 card_array = string_to_array_method(card_number)
 card_integer_array = array_to_integer_array_method(card_array)
 reverse_integer_array = reverse_method(card_integer_array)
