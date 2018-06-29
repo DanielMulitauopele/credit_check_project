@@ -78,9 +78,9 @@ end
 # Else puts "The number is invalid!"
 def modulo_10_method
   if @summed_array % 10 == 0
-    "The number #{@card_number} is valid!"
+    true
   else
-    "The number #{@card_number} is invalid!"
+    false
   end
 end
 
@@ -94,6 +94,14 @@ def valid_number?(card_number)
   summing_method
   modulo_10_method
 end
+
+def validation_output
+  if true
+    "The number #{card_number} is valid."
+  else
+    "The number #{card_number} is invalid."
+end
+
 
 end
 
